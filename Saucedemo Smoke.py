@@ -12,7 +12,6 @@ driver.maximize_window()
 
 print("Добро пожаловать в наш магазин!")
 print("Выберите один из следующих товаров и укажите его номер: 1 - Sauce Labs Backpack, 2 - Sauce Labs Bike Light, 3 - Sauce Labs Bolt T-Shirt, 4 - Sauce Labs Fleece Jacket, 5 - Sauce Labs Onesie, 6 - Test.allTheThings() T-Shirt (Red)")
-product = input()
 
 
 class Product():
@@ -124,22 +123,27 @@ sauce_labs_bolt_t_shirt = Product(3, "//*[@id='item_1_title_link']", "/html/body
 sauce_labs_fleece_jacket = Product(4, "//*[@id='item_5_title_link']", "/html/body/div/div/div/div[2]/div/div/div/div[4]/div[2]/div[2]/div", "//*[@id='add-to-cart-sauce-labs-fleece-jacket']", "//*[@id='item_5_title_link']", "//div[@class='inventory_item_price']", "//*[@id='item_5_title_link']", "//div[@class='inventory_item_price']")
 sauce_labs_onesie = Product(5, "//*[@id='item_2_title_link']", "/html/body/div/div/div/div[2]/div/div/div/div[5]/div[2]/div[2]/div", "//*[@id='add-to-cart-sauce-labs-onesie']", "//*[@id='item_2_title_link']", "//div[@class='inventory_item_price']", "//*[@id='item_2_title_link']", "//div[@class='inventory_item_price']")
 test_allTheThings_t_Shirt = Product(6, "//*[@id='item_3_title_link']", "/html/body/div/div/div/div[2]/div/div/div/div[6]/div[2]/div[2]/div", "//*[@id='add-to-cart-test.allthethings()-t-shirt-(red)']", "//*[@id='item_3_title_link']", "//div[@class='inventory_item_price']", "//*[@id='item_3_title_link']", "//div[@class='inventory_item_price']")
-
-if product == "1":
-    print("Вы выбрали: Sauce Labs Backpack")
-    sauce_labs_backpack.test()
-elif product == "2":
-    print("Вы выбрали: Sauce Labs Bike Light")
-    sauce_labs_bike_light.test()
-elif product == "3":
-    print("Вы выбрали: Sauce Labs Bolt T-Shirt")
-    sauce_labs_bolt_t_shirt.test()
-elif product == "4":
-    print("Вы выбрали: Sauce Labs Fleece Jacket")
-    sauce_labs_fleece_jacket.test()
-elif product == "5":
-    print("Вы выбрали: Sauce Labs Onesie")
-    sauce_labs_onesie.test()
-elif product == "6":
-    print("Вы выбрали: Test.allTheThings() T-Shirt (Red)")
-    test_allTheThings_t_Shirt.test()
+def vhod():
+    product = input()
+    if product == "1":
+        print("Вы выбрали: Sauce Labs Backpack")
+        sauce_labs_backpack.test()
+    elif product == "2":
+        print("Вы выбрали: Sauce Labs Bike Light")
+        sauce_labs_bike_light.test()
+    elif product == "3":
+        print("Вы выбрали: Sauce Labs Bolt T-Shirt")
+        sauce_labs_bolt_t_shirt.test()
+    elif product == "4":
+        print("Вы выбрали: Sauce Labs Fleece Jacket")
+        sauce_labs_fleece_jacket.test()
+    elif product == "5":
+        print("Вы выбрали: Sauce Labs Onesie")
+        sauce_labs_onesie.test()
+    elif product == "6":
+        print("Вы выбрали: Test.allTheThings() T-Shirt (Red)")
+        test_allTheThings_t_Shirt.test()
+    else:
+        print("Вы ввели не тот символ, пожалуйста, введите цифру от 1 до 6")
+        vhod()
+vhod()
